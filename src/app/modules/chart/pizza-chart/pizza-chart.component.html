@@ -1,0 +1,11 @@
+<div class="text-size-13">
+	<ng-container *ngIf="data?.length !=0">
+		<ejs-accumulationchart [title]='chartTitle' [legendSettings]="legend" [tooltip]='tooltipSettings'>
+			<e-accumulation-series-collection>
+				<e-accumulation-series radius='radius' type='Pie' [dataSource]='data' xName='{{infosChart?.xname}}'
+					yName='{{infosChart?.yname}}' [dataLabel]="chartLabel">
+				</e-accumulation-series>
+			</e-accumulation-series-collection>
+		</ejs-accumulationchart>
+	</ng-container>
+</div>

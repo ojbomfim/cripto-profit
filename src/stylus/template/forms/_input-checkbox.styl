@@ -1,0 +1,37 @@
+input[type='checkbox']
+  display none
+
+  & + label
+    display inline-table
+    position relative
+    cursor pointer
+    padding 0px 10px 10px 25px
+    margin 10px
+    min-height 20px
+    color #808080
+    font-size 16px
+
+  & + label::after
+    content ''
+    position absolute
+    width 15px
+    height 15px
+    left 2px
+    top 0px
+    border solid 1px
+    border-radius 5px
+    vertical-align bottom
+    border-color escala-cinza-7
+
+  &:checked + label::before
+    content ''
+    position absolute
+    top -1px
+    left 1px
+    width 20px
+    height 20px
+    background-color none
+    background-image url('^assets/img/chec1-1.png')
+    background-position center 50%
+    background-size 74%
+    background-repeat no-repeat

@@ -1,0 +1,61 @@
+<ng-container *ngIf="!loadingResults">
+	<table class="text-align-center">
+		<caption>Results</caption>
+		<tr>
+			<th (click)="activeMenu()" [ngClass]="{active: active}">Today</th>
+			<th (click)="activeMenu()" [ngClass]="{active: !active}">Totals</th>
+		</tr>
+		<tr>
+			<td>{{today?.percentage}} %</td>
+			<td>{{totals?.percentage}} %</td>
+		</tr>
+		<ng-container *ngIf="active">
+			<tr>
+				<td>Initial
+				</td>
+				<td>{{today?.inicial | currency : 'USD':'symbol-narrow':'1.2-2'}}</td>
+			</tr>
+			<tr>
+				<td>Fees</td>
+				<td>{{today?.fees | currency : 'USD':'symbol-narrow':'1.2-2'}}</td>
+			</tr>
+			<tr>
+				<td>Gross Profit</td>
+				<td>{{today?.gross_profit | currency : 'USD':'symbol-narrow':'1.2-2'}}</td>
+			</tr>
+			<tr>
+				<td>Net Profit</td>
+				<td>{{today?.net_profit | currency : 'USD':'symbol-narrow':'1.2-2'}}</td>
+			</tr>
+			<tr>
+				<td>Position</td>
+				<td>{{today?.total | currency : 'USD':'symbol-narrow':'1.2-2'}}</td>
+			</tr>
+		</ng-container>
+		<ng-container *ngIf="!active">
+			<tr>
+				<td>Initial
+				</td>
+				<td>{{totals?.inicial | currency : 'USD':'symbol-narrow':'1.2-2'}}</td>
+			</tr>
+			<tr>
+				<td>Fees</td>
+				<td>{{totals?.fees | currency : 'USD':'symbol-narrow':'1.2-2'}}</td>
+			</tr>
+			<tr>
+				<td>Gross Profit</td>
+				<td>{{totals?.gross_profit | currency : 'USD':'symbol-narrow':'1.2-2'}}</td>
+			</tr>
+			<tr>
+				<td>Net Profit</td>
+				<td>{{totals?.net_profit | currency : 'USD':'symbol-narrow':'1.2-2'}}</td>
+			</tr>
+			<tr>
+				<td>Position</td>
+				<td>{{totals?.total | currency : 'USD':'symbol-narrow':'1.2-2'}}</td>
+			</tr>
+		</ng-container>
+	</table>
+
+</ng-container>
+<loading [loading]=loadingResults></loading>

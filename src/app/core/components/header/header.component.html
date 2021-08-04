@@ -1,0 +1,26 @@
+<header class="desktop">
+	<div class="logo">
+		<img src="\assets\svg\mr profit logo sample.svg" alt="Logo" />
+	</div>
+
+	<nav>
+		<!-- <a class="a-link">FAQ</a>
+		<a class="a-link"> how to start</a>
+		<i class="fas fa-bell"></i> -->
+		<div class="profile">
+			<img src="\assets\img\Favicon.png" alt="profile" />
+			<span class='text-transform-capitalize'>{{name}}</span>
+			<!-- <img class='hight' src="\assets\svg\svg icons\Settings.svg" alt=""> -->
+		</div>
+		<button (click)='logout()' class="btn btn-revert">Log Out</button>
+	</nav>
+
+</header>
+
+<header class="mobile">
+	<h1>Cryptoong</h1>
+	<button (click)="ActiveMenu()"><i class="fas fa-bars"></i></button>
+</header>
+<ng-container *ngIf="ismenuMobileActive">
+	<app-menu-mobile (closeMenu)="deactivateMenu($event)"></app-menu-mobile>
+</ng-container>

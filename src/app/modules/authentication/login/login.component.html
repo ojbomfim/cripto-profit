@@ -1,0 +1,38 @@
+<div class="auth">
+	<section>
+		<img src="\assets\svg\mr profit logo sample.svg" alt="Mr.Profit Logo">
+		<div>
+			<form [formGroup]="loginForm" (change)='setRememberme()'>
+				<h1>
+					Sign In
+				</h1>
+				<input formControlName="user_name" placeholder="Your Email" type="email">
+				<small class="text-vermelho-escuro" appMensagensErrosForms [control]="loginForm.get('user_name')"></small>
+
+				<input formControlName="password" placeholder="Your Password" type="password">
+				<small class="text-vermelho-escuro" appMensagensErrosForms [control]="loginForm.get('password')"></small>
+
+				<input [formControl]="rememberme" id="rememberme" type="checkbox"> <label for="rememberme">Remember me
+				</label>
+			</form>
+			<div class="align">
+				<div class="buttons">
+					<button (click)=login()>
+						<btn-loading [loading]="loadingButton"></btn-loading>
+						<ng-container *ngIf="!loadingButton">Login</ng-container>
+					</button>
+					<button (click)=signup()>Sign Up</button>
+				</div>
+				<a [routerLink]="['/recovery-password/id']" routerLinkActive="router-link-active">Forgot Password?</a>
+			</div>
+		</div>
+
+
+		<p>
+			<span> By Signing up, you agree yo our</span>
+			<a>Terms and Conditions & Privacy Policy</a>
+
+		</p>
+	</section>
+
+</div>

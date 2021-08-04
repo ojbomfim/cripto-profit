@@ -1,0 +1,73 @@
+<div class="grid-container">
+	<div class="buttons">
+		<button [class.active]="isActive('proftxBTC')" (click)="setActive('proftxBTC')" class="btn-cards">Profit (%) X
+			BTC
+			(%)</button>
+		<button [class.active]="isActive('gainAndLoses')" (click)="setActive('gainAndLoses')" class="btn-cards">
+			Gains
+		</button>
+		<button [class.active]="isActive('position')" (click)="setActive('position')" class="btn-cards">Position</button>
+	</div>
+	<form class="time" [formGroup]="form" (change)="updatedTime()">
+		<select formControlName="date_interval">
+			<option>Time</option>
+			<option *ngFor="let time of timers" [ngValue]="time.value">
+				{{time.name}}
+			</option>
+		</select>
+	</form>
+	<div class=" info inside-card text-size-13">
+		<div>
+			<span class="text-mrp-azul">{{btcChanges?.last_price | currency : 'USD':'symbol-narrow':'1.2-2'}}</span>
+			<span class="text-mrp-cinza">Last BTC price</span>
+		</div>
+		<div>
+			<div>
+				<span [ngClass]="btcChanges?.change > 0 ? 'text-mrp-verde' : 'text-vermelho-escuro' ">
+					{{btcChanges?.change}} %</span>
+				<span class="text-mrp-cinza">24h Change</span>
+			</div>
+			<div>
+				<span class="text-mrp-azul">{{btcChanges?.high | currency : 'USD':'symbol-narrow':'1.2-2'}}</span>
+				<span class="text-mrp-cinza">24h High</span>
+			</div>
+			<div>
+				<span class="text-mrp-azul">{{btcChanges?.low | currency : 'USD':'symbol-narrow':'1.2-2'}}</span>
+				<span class="text-mrp-cinza">24h Low</span>
+			</div>
+			<button class="justify-content-center icon" [ngClass]="{'icon-loading': loadingicon }" (click)="getBtcChanges()">
+				<i class="fas fa-sync"></i></button>
+		</div>
+	</div>
+</div>
+
+
+
+
+<section class="row justify-content-center">
+	<ng-container *ngIf="isActive('proftxBTC')">
+		<div *ngIf="proftxbtc.data?.length != 0" style="max-width: 100%">
+			<financial-chart [chartTitle]="proftxbtc.chartTitle" [xAxis]="proftxbtc.xAxis" [yAxis]="proftxbtc.yAxis"
+				[data]='proftxbtc.data' [infosChart]='proftxbtc.infosChart' [loadingChart]="loadingProftXbtc">
+			</financial-chart>
+		</div>
+	</ng-container>
+
+	<ng-container *ngIf="isActive('gainAndLoses')">
+		<div *ngIf=" gainAndLoses.data?.length !=0" style="max-width: 100%">
+			<financial-chart [chartTitle]="gainAndLoses.chartTitle" [xAxis]="gainAndLoses.xAxis" [yAxis]="gainAndLoses.yAxis"
+				[data]='gainAndLoses.data' [infosChart]='gainAndLoses.infosChart' [loadingChart]="loadingGainAndLoses">
+			</financial-chart>
+		</div>
+	</ng-container>
+
+	<ng-container *ngIf="isActive('position')">
+		<div *ngIf=" positionsChart.data?.length !=0" style="max-width: 100%">
+			<financial-chart [chartTitle]="positionsChart.chartTitle" [xAxis]="positionsChart.xAxis"
+				[yAxis]="positionsChart.yAxis" [data]='positionsChart.data' [infosChart]='positionsChart.infosChart'
+				[loadingChart]="loadingPositionChart">
+			</financial-chart>
+		</div>
+	</ng-container>
+
+</section>

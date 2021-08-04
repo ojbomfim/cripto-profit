@@ -1,0 +1,16 @@
+<nav id="mobile">
+	<a class="close" (click)="deactivateMenu()"><img src="../../../../assets/svg/svg icons/close.svg" /></a>
+	<div class="profile">
+		<img src="\assets\img\Favicon.png" alt="profile" />
+		<span>{{name}}</span>
+	</div>
+	<div class="content">
+		<div class="options">
+			<a><img src="../../../../assets/svg/Mobile SVG/Icon material-dashboard.svg" /> <span>Dashboard</span></a>
+			<a><img src="../../../../assets/svg/Mobile SVG/Icon feather-help-circle.svg" /><span>Help</span></a>
+		</div>
+
+		<a class="logout" (click)="logout()"><span>Log Out</span>
+			<img src="../../../../assets/svg/Mobile SVG/Icon ionic-ios-log-out.svg" /></a>
+	</div>
+</nav>

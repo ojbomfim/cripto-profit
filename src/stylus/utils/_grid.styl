@@ -1,0 +1,52 @@
+screen-sm = 768px
+screen-md = 992px
+screen-lg = 1340px
+width-main = 1080px
+
+@media screen and (min-width 1px)
+	for row in 1 2 3 4 5 6 7 8 9 10 11 12
+		.col-xl-{row}
+			position relative
+			width 100%
+			min-height 1px
+			padding 5px
+			text-align left
+			flex 0 0 (100 / (12 / row))%
+			max-width (100 / (12 / row))%
+			display block
+
+@media screen and (max-width 960px)
+	for row in 1 2 3 4 5 6 7 8 9 10 11 12
+		.col-lg-{row}
+			position relative
+			width 100%
+			min-height 1px
+			padding 5px
+			text-align left
+			flex 0 0 (100 / (12 / row))%
+			max-width (100 / (12 / row))%
+			display block
+
+@media screen and (max-width 720px)
+	for row in 1 2 3 4 5 6 7 8 9 10 11 12
+		.col-md-{row}
+			position relative
+			width 100%
+			min-height 1px
+			padding 5px
+			text-align left
+			flex 0 0 (100 / (12 / row))%
+			max-width (100 / (12 / row))%
+			display block
+
+@media screen and (max-width 480px)
+	for row in 1 2 3 4 5 6 7 8 9 10 11 12
+		.col-sm-{row}
+			position relative
+			width 100%
+			min-height 1px
+			padding 5px
+			text-align left
+			flex 0 0 (100 / (12 / row))%
+			max-width (100 / (12 / row))%
+			display block

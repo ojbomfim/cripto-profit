@@ -1,0 +1,130 @@
+
+.cards-groups
+	display flex
+	justify-content space-between
+	margin 10px 0px
+	max-width 100vw
+
+.cards-superior
+	.card:nth-child(n+2)
+		margin-left 10px
+
+.cards-middle
+	flex-grow 5
+	min-height 630px
+
+	.card:nth-child(2)
+		margin 0px 15px
+		flex-grow 2
+		min-height 630px
+
+.cards-middle-small
+	.card:nth-child(3)
+		margin 0px 20px
+
+	.cards-collum
+		display flex
+		flex-grow 1
+		flex-direction column
+		margin 0
+		margin-right 20px
+
+	:nth-child(1)
+		margin-bottom 5px
+
+	.robots
+		width 200px
+
+.card-strip
+	flex-grow 1
+	min-height 136px
+	margin 10px 0px
+
+.cards-groups-gallery
+	:nth-child(n+2)
+		margin-left 5px
+
+.card
+	flex-grow 1
+	padding 20px
+	background escala-cinza-1 0% 0% no-repeat padding-box
+	box-shadow 0px 0px 30px mrp-escala-cinza-3
+	border-radius 10px
+
+.table
+	padding 0
+
+.card-icon-text
+	display flex
+	align-items center
+	justify-content flex-start
+
+	p
+		display flex
+		flex-direction column
+		margin 0px 10px
+
+.card-icon-text-2
+	display flex
+	flex-direction column
+	align-items center
+	justify-content space-around
+
+	p
+		display flex
+		flex-direction column
+		margin 0px 10px
+		align-items center
+
+		span
+			margin 10px 0px
+
+.card-final
+	width 85%
+	margin 30px auto
+
+@media (max-width 1300px)
+	.cards-superior
+		.card:nth-child(n+2)
+			margin 10px 0px
+
+	.cards-groups
+		flex-direction column
+
+	.cards-middle
+		.card
+			flex-grow 1
+			margin 30px 0px
+
+		.card:nth-child(2)
+			margin 0px
+
+	.cards-middle-small
+		.card:nth-child(3)
+			margin 0
+
+		.cards-collum
+			margin 0
+			margin-right 0px
+
+		.robots
+			width 100%
+			margin 20px 0px
+
+	.card-final
+		width 100%
+		margin 20px 0px
+
+		.card
+			margin 0
+			margin-top 20px
+			margin-bottom 10px
+
+		.row
+			flex-direction column
+
+	.scroll
+		overflow auto
+
+		.card
+			min-width 1300px

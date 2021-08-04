@@ -1,0 +1,18 @@
+<ng-container *ngIf="!loadingChart">
+	<div class="text-size-13">
+		<ng-container *ngIf="data?.length !=0">
+			<ejs-chart [primaryXAxis]='xAxis' [primaryYAxis]='yAxis' [title]='chartTitle' [legendSettings]="legend"
+				[tooltip]="tooltipSetting">
+				<e-series-collection class="banana">
+					<ng-container *ngFor="let chart of infosChart">
+						<e-series type='Line' [dataSource]='data' xName={{chart.xname}} yName={{chart.yname}}
+							name={{chart.name}} [marker]="markerSettings">
+						</e-series>
+					</ng-container>
+				</e-series-collection>
+			</ejs-chart>
+		</ng-container>
+	</div>
+
+</ng-container>
+<loading [loading]=loadingChart></loading>

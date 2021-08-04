@@ -1,0 +1,10 @@
+positions = center start end flex-start flex-end left right
+spaces = space-around space-between space-evenly
+
+for position in positions
+	.justify-content-{position}
+		justify-content position
+
+for type_space in spaces
+	.{type_space}
+		justify-content type_space

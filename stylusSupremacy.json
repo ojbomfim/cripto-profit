@@ -1,0 +1,10 @@
+{
+  "stylusSupremacy.insertColons": false,
+  "stylusSupremacy.insertSemicolons": false,
+  "stylusSupremacy.quoteChar": "'",
+  "stylusSupremacy.insertSpaceBeforeComment": true,
+  "stylusSupremacy.alwaysUseZeroWithoutUnit": true,
+  "stylusSupremacy.insertSpaceInsideParenthesis": false,
+  "stylusSupremacy.insertParenthesisAroundIfCondition": false,
+  "stylusSupremacy.insertBraces": false
+}

@@ -1,0 +1,26 @@
+.buttons
+	grid-area buttons
+
+.time
+	grid-area time
+	display flex
+	justify-content flex-end
+
+.info
+	grid-area info
+
+.grid-container
+	display grid
+	grid-template-areas 'buttons buttons buttons buttons time ' 'info info info info info'
+
+@media screen and (max-width 1200px)
+	.grid-container
+		grid-template-areas 'buttons buttons buttons buttons buttons' 'info info info info info' 'time time time time time'
+
+	.buttons
+		display flex
+		justify-content space-between
+
+	.info
+		.icon
+			margin 0px 7px

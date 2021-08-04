@@ -1,0 +1,11 @@
+
+displays-inline = inline inline-block inline-grid inline-flex
+displays = none block flex grid
+
+for type in displays
+	.d-inline-{type}
+		display type !important
+
+for type in displays
+	.d-{type}
+		display type !important

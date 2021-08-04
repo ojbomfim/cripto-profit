@@ -1,0 +1,32 @@
+@import '../../../../stylus/color'
+
+:host
+	display flex
+	flex 1
+	flex-direction column
+	margin auto
+
+.loader
+	width 100%
+	height 21em // 387px
+	display flex
+	align-items center
+	justify-content center
+
+	img:nth-child(1)
+		margin-bottom 20px
+
+	span
+		color mrp-escala-azul-4
+		margin-top 25px
+
+.spiner
+	animation spin 3s linear infinite
+	transform-origin 50% 50%
+
+@keyframes spin
+	0%
+		transform rotate(0deg)
+
+	100%
+		transform rotate(-360deg)

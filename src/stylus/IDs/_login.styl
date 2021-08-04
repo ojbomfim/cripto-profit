@@ -1,0 +1,118 @@
+
+.auth
+	flex 1
+	display flex
+	justify-content center
+	padding 50px 0px
+
+	section
+		max-width 400px
+		flex 1
+		display flex
+		flex-direction column
+		justify-content space-between
+		align-items center
+
+		&>img
+			width 100%
+			display table
+			max-width 300px
+			margin-top 50px
+
+		h1
+			margin-bottom 36px
+			width 100%
+			text-align center
+			font-size 25px
+			letter-spacing 0px
+			color mrp-escala-azul-4
+
+		form
+			input[type='email'], input[type='password']
+				padding 20px
+				background escala-cinza-1
+				border 2px solid mrp-escala-azul-1
+				border-radius 10px
+				box-shadow 0px 0px 40px mrp-escala-azul-0
+				width 381px
+				height 44px
+				margin 10px 0px
+
+				&::placeholder
+					color mrp-escala-azul-2
+					font-size 12px
+
+			small
+				font-size 10px
+				display flex
+				margin 5px 14px
+
+		.buttons
+			display flex
+			justify-content center
+			align-items center
+			flex-direction row
+
+			button
+				border 2px solid mrp-escala-azul-4
+				padding 8px 30px
+				margin 32px 10px
+				border-radius 10px
+				cursor pointer
+				font-weight bolder
+				transition all 0.5
+
+			button:nth-child(1)
+				background-color mrp-escala-azul-4
+				color escala-cinza-1
+
+				&:hover
+					background-color mrp-escala-azul-hover
+					color escala-cinza-1
+
+			button:nth-child(2)
+				background-color mrp-branco-gelo
+				color mrp-escala-azul-4
+
+				&:hover
+					background-color mrp-escala-azul-revert
+					color mrp-escala-azul-4
+
+	a
+		color mrp-escala-azul-4
+		font-size 14px
+		margin-bottom auto
+
+	p
+		font-size 13px
+		display flex
+		flex-direction column
+		color escala-cinza-7
+		text-align center
+
+@media (max-width 850px)
+	.auth
+		padding 25px
+
+		section
+			img
+				margin-top 0px
+
+			form
+				width 80vw
+
+				input[type='text']
+					width 100%
+					margin 5px auto
+
+@media (max-width 450px)
+	.auth
+		section
+			img
+				max-width 200px
+
+@media (max-height 600px)
+	.auth
+		section
+			img
+				margin-top 10px

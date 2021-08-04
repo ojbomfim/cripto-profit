@@ -1,0 +1,91 @@
+.btn
+	border 2px solid mrp-escala-azul-4
+	margin 36px 10px 32px 10px
+	border-radius 10px
+	cursor pointer
+	font-weight bolder
+	transition all 0.5
+	width 130px
+	height 39px
+
+	&:disabled
+		background-color escala-cinza-8
+		cursor initial
+
+.btn-revert
+	background-color mrp-branco-gelo
+	color mrp-escala-azul-4
+
+	&:hover:not(:disabled)
+		background-color mrp-escala-azul-revert
+		color mrp-escala-azul-4
+
+.btn-normal
+	background-color mrp-escala-azul-4
+	color escala-cinza-1
+
+	&:hover:not(:disabled)
+		background-color mrp-escala-azul-hover
+		color escala-cinza-1
+
+.btn-cards
+	padding 10px 15px
+	font-size 15px
+	margin 10px 10px 10px 0px
+	background-color mrp-branco-gelo-1
+	border 2px solid mrp-branco-gelo-1
+	color mrp-escala-azul-4
+	border-radius 10px
+	cursor pointer
+	font-weight bold
+
+	&.active
+		background-color mrp-escala-azul-4
+		border 2px solid mrp-escala-azul-4
+		color escala-cinza-1
+		font-weight bold
+
+.btn-remover
+	background transparent
+	border solid 1.5px vermelho
+	color vermelho
+	font-size 14px
+	padding 5px 15px
+	cursor pointer
+
+	&:hover
+		background vermelho
+		color escala-cinza-1
+		border-color vermelho
+
+.btn-right
+	display table
+	margin 10px 10px 10px auto
+
+.btn-left
+	display table
+	margin 10px
+
+.btn-center
+	display table
+	margin 10px auto
+
+.btn-full
+	display table
+	text-align center
+	width calc(100% - 20px)
+	margin 10px
+
+@media screen and (max-width 600px)
+	.btn-cards
+		padding 7px 13px
+		font-size 13px
+		margin 7px 7px 7px 0px
+
+@media screen and (max-width 450px)
+	.btn-cards
+		padding 5px 10px
+		font-size 10px
+		margin 5px 5px 5px 0px
+		border 2px solid mrp-branco-gelo-1
+		border-radius 10px

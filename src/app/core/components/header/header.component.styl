@@ -1,0 +1,75 @@
+@import '../../../../stylus/color'
+
+.desktop
+	height 80px
+	box-sizing content-box
+	display flex
+	align-items center
+	justify-content space-between
+	box-shadow 0px 3px 30px mrp-escala-azul-1
+
+	// #C4D3EBFD
+	.logo
+		height 60px
+		padding 15px
+		margin 40px
+
+	.profile
+		border-left 2px solid mrp-escala-azul-1
+		border-right 2px solid mrp-escala-azul-1
+
+	i
+		color mrp-escala-azul-1
+		padding-right 20px
+
+		&:hover
+			color mrp-escala-azul-hover
+
+nav
+	display flex
+	flex 1
+	align-items center
+	justify-content flex-end
+
+header
+	.profile
+		height 40px
+		display flex
+		align-items center
+		padding 0px 10px
+
+		img
+			border-radius 50%
+			box-shadow 0px 3px 6px mrp-escala-azul-1
+			margin 0px 10px
+
+img
+	height 100%
+
+.hight
+	height 52%
+
+.mobile
+	display none
+
+@media (max-width 1000px)
+	.desktop
+		display none
+
+	.mobile
+		height 120px
+		display flex
+		align-items flex-end
+		justify-content space-between
+		padding 30px
+		background-color mrp-escala-azul-4
+
+		h1
+			font Bold 24px Montserrat
+			letter-spacing 0px
+			color #FFFFFF
+
+		button
+			i
+				color #FFFFFF
+				font-size 30px

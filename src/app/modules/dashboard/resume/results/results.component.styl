@@ -1,0 +1,73 @@
+@import '../../../../../stylus/color'
+
+:host
+	display flex
+	height 100%
+	padding 0
+
+	table
+		display flex
+		flex-direction column
+		justify-content space-around
+		border-collapse collapse
+		width 100%
+
+	caption
+		color escala-cinza-10
+		font-weight 600
+		margin 10px
+
+	tr
+		flex-grow 1
+		display flex
+
+		&:nth-child(2)
+			color mrp-escala-azul-2
+			flex-grow 0.5
+			cursor pointer
+
+		&:nth-child(3)
+			border-top 1px solid escala-cinza-4
+			color mrp-escala-azul-4
+			font-weight bold
+
+			td:nth-child(1)
+				border-right 1px solid escala-cinza-4
+
+		&:nth-child(n+4)
+			border-top 1px solid escala-cinza-4
+
+		&:nth-child(4), &:nth-child(8)
+			color escala-cinza-10
+
+		&:nth-child(5)
+			color vermelho
+
+		&:nth-child(6)
+			color azul
+
+		&:nth-child(7)
+			color verde
+
+		th, td
+			width 50%
+			display flex
+			flex-direction column
+			align-items center
+			justify-content center
+
+		td
+			padding 10px
+
+			&:nth-child(1)
+				font-weight bold
+
+			span
+				font-weight normal
+
+.active
+	color mrp-escala-azul-4
+	font-weight bold
+	background-color mrp-branco-gelo-1
+	cursor pointer
+	border-bottom 2px solid mrp-escala-azul-4

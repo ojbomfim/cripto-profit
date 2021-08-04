@@ -1,0 +1,36 @@
+<ng-container *ngIf="!loadingRobots">
+	<div class="cards-collum">
+		<div class="card card-icon-text"><img src="\assets\svg\svg icons\calendar icon.svg" alt="icon">
+			<p>
+				<span class="text-size-16 text-mrp-cinza">Running Since:</span>
+				<span class="text-mrp-azul text-size-16">{{bots?.running_since | datehours: 'dateMediaWithTime'}}</span>
+			</p>
+		</div>
+		<div class="card m-top-5 card-icon-text"><img src="\assets\svg\svg icons\timer icon.svg" alt="icon">
+			<p>
+				<span class="text-size-16 text-mrp-cinza">Time running</span>
+				<span class="text-mrp-azul text-size-16">{{bots?.time_running}}</span>
+			</p>
+		</div>
+	</div>
+	<div class="card card-icon-text-2 robots"><img src=" \assets\svg\svg icons\robot icon.svg" alt="icon">
+		<p>
+			<span class="text-size-16 text-mrp-cinza">Robots</span>
+			<span class="text-mrp-azul text-size-30">{{bots?.robot}}</span>
+		</p>
+	</div>
+	<div class="card card-icon-text-2 robots"><img src="\assets\svg\svg icons\arrow up icon.svg" alt="icon">
+		<p>
+			<span class="text-size-16 text-mrp-cinza">Estrategies</span>
+			<span class="text-mrp-azul text-size-30">{{bots?.strategies}}</span>
+		</p>
+	</div>
+	<div class="card card-icon-text-2 robots"><img src="\assets\svg\svg icons\usage icon.svg" alt="icon">
+		<p>
+			<span class="text-size-16 text-mrp-cinza">Principal Usage</span>
+			<span class="text-mrp-azul text-size-30">{{bots?.principal_usage}}%</span>
+		</p>
+	</div>
+</ng-container>
+
+<loading [loading]=loadingRobots></loading>

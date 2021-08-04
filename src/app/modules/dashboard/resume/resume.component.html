@@ -1,0 +1,138 @@
+<ng-container *ngIf="!loadings[0] && !loadings[1] && !loadings[2] && !loadings[3]">
+	<h1>Overview</h1>
+	<p>Welcome to your profiting reports</p>
+	<div class="cards-superior cards-groups">
+		<div class="card card-icon-text">
+			<img src="\assets\svg\svg icons\Client.svg" alt="client icon">
+			<p>
+				<span class="text-size-16 text-mrp-cinza">Client:</span>
+				<span class="text-mrp-azul text-size-16">{{infosUser?.name}}</span>
+			</p>
+
+		</div>
+		<div class="card card-icon-text">
+			<img src="\assets\svg\svg icons\Strategy.svg" alt="Strateicon">
+			<p>
+				<span class="text-size-16 text-mrp-cinza">Strategy:</span>
+				<span class="text-mrp-azul text-size-16">{{infosUser?.strategy}}</span>
+			</p>
+		</div>
+		<div class="card card-icon-text">
+			<img src="\assets\svg\svg icons\timer icon.svg" alt="last update icon">
+			<p>
+				<span class="text-size-16 text-mrp-cinza">Last Update</span>
+				<span class="text-mrp-azul text-size-16">{{infosUser?.last_update | datehours: 'dateMediaWithTime'}}</span>
+			</p>
+
+		</div>
+	</div>
+
+	<div class="cards-middle cards-groups">
+		<div class="card card-icon-text-2">
+			<img src="\assets\svg\svg icons\Group 126.svg" alt="icon">
+			<p>
+				<span class="text-size-16 text-mrp-cinza">Initial</span>
+				<span class="text-mrp-azul text-size-20">
+					{{infosUser?.principal | currency : 'USD':'symbol-narrow':'1.2-2'}}</span>
+			</p>
+			<img src="\assets\svg\svg icons\Group 125.svg" alt="icon">
+			<p>
+				<span class="text-size-16 text-mrp-cinza">Position</span>
+				<span
+					class="text-mrp-azul text-size-20">{{infosUser?.position | currency : 'USD':'symbol-narrow':'1.2-2'}}</span>
+			</p>
+		</div>
+		<div class="card">
+			<app-profit></app-profit>
+		</div>
+		<div class="card table">
+			<app-results></app-results>
+		</div>
+	</div>
+
+	<div class="cards-middle-small cards-groups">
+		<app-robots-resume></app-robots-resume>
+	</div>
+
+	<div class="card m-bottom-15 card-final">
+		<div class="row" style="align-items: center; justify-content: center;">
+			<ng-container *ngIf="chartInfoFreeUser?.data?.length !=0">
+				<pizza-chart style="flex: 1;" [data]="chartInfoFreeUser.data" [radius]="chartInfoFreeUser.radius"
+					[chartTitle]="chartInfoFreeUser.chartTitle" [infosChart]="chartInfoFreeUser.infosChart"
+					[chartLabel]="chartInfoFreeUser.chartLabel" [tooltipSettings]="chartInfoFreeUser.tooltipSettings">
+				</pizza-chart>
+			</ng-container>
+
+			<ng-container *ngIf="chartPPP?.data?.length !=0">
+				<pizza-chart style="flex: 1;" [data]="chartPPP.data" [radius]="chartPPP.radius"
+					[chartTitle]="chartPPP.chartTitle" [infosChart]="chartPPP.infosChart" [chartLabel]="chartPPP.chartLabel"
+					[tooltipSettings]="chartPPP.tooltipSettings">
+				</pizza-chart>
+			</ng-container>
+		</div>
+		<div class="row">
+			<div class="col-xl-6 col-lg-6 col-md-6"></div>
+			<div class="col-xl-6 col-lg-6 col-md-6 row justify-content-center">
+				Position:
+				<span class="text-mrp-azul">
+					{{position?.value | currency : 'USD':'symbol-narrow':'1.2-2'}}
+				</span>
+			</div>
+		</div>
+	</div>
+	<div class="card-final">
+		<h1 class=" m-bottom-10 m-top-10">Bought Average Quantity and Price (BTC):</h1>
+		<div class="scroll">
+			<div class="card ">
+				<app-average-quality-table></app-average-quality-table>
+			</div>
+		</div>
+
+	</div>
+
+
+	<div class="cards-inferior cards-groups card-final ">
+		<div class="card card-icon-text m-left-10 m-right-10">
+			<img src="\assets\svg\svg icons\clock Icon.svg" alt="clock Icon">
+			<p>
+				<span class="text-size-12 text-mrp-cinza">Open Orders:</span>
+				<span class="text-mrp-azul text-size-14">{{orderInfos?.open_orders}}</span>
+			</p>
+
+		</div>
+		<div class="card card-icon-text m-left-10 m-right-10">
+			<img src="\assets\svg\svg icons\buy icon.svg" alt="buy icon">
+			<p>
+				<span class="text-size-12 text-mrp-cinza">Total Trades Buy:</span>
+				<span class="text-mrp-azul text-size-14">{{orderInfos?.total_trades_buy}}</span>
+			</p>
+		</div>
+		<div class="card card-icon-text m-left-10 m-right-10">
+			<img src="\assets\svg\svg icons\sell icon.svg" alt="sell icon">
+			<p>
+				<span class="text-size-12 text-mrp-cinza">Total Trades Sell:</span>
+				<span class="text-mrp-azul text-size-14">{{orderInfos?.total_trades_sell}}</span>
+			</p>
+
+		</div>
+		<div class="card card-icon-text m-left-10 m-right-10">
+			<img src="\assets\svg\svg icons\checked icon.svg" alt="checked icon">
+			<p>
+				<span class="text-size-12 text-mrp-cinza">Closed Trade Trade:</span>
+				<span class="text-mrp-azul text-size-14">{{orderInfos?.closed_trades}}</span>
+			</p>
+		</div>
+		<div class="card card-icon-text m-left-10 m-right-10">
+			<img src="\assets\svg\svg icons\trade icon.svg" alt="trade icon">
+			<p>
+				<span class="text-size-12 text-mrp-cinza">Average Spread/Trade</span>
+				<span
+					class="text-mrp-azul text-size-14">{{orderInfos?.average_trade | currency : 'USD':'symbol-narrow':'1.2-2'}}</span>
+			</p>
+
+		</div>
+	</div>
+</ng-container>
+<ng-container *ngIf="loadings[0] || loadings[1]">
+	<loadings [loadings]=loadings></loadings>
+</ng-container>

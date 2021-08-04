@@ -1,0 +1,20 @@
+.loader
+	width 100%
+	display flex
+	align-items center
+	justify-content center
+
+	.spinImg
+		width 20px
+		height 20px
+
+.spiner
+	animation spin 3s linear infinite
+	transform-origin 50% 50%
+
+@keyframes spin
+	0%
+		transform rotate(0deg)
+
+	100%
+		transform rotate(-360deg)

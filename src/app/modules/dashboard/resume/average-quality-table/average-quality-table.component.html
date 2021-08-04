@@ -1,0 +1,45 @@
+<div class="table-mrp">
+	<table>
+		<thead>
+			<tr>
+				<th>
+					Quantity
+				</th>
+				<th>
+					Average Price
+				</th>
+				<th>
+					Actual BTC price:
+					<span class="text-mrp-azul">
+						{{actual_btc_price | currency : 'USD':'symbol-narrow':'1.2-2'}}
+					</span>
+				</th>
+				<th>
+					Free
+				</th>
+			</tr>
+		</thead>
+		<tbody *ngIf="!loading">
+			<ng-container *ngFor="let average of averages">
+				<tr>
+					<td class="text-mrp-cinza">
+						{{average?.quantity | currency:'BTC':'symbol-narrow':'1.8-8'}}
+					</td>
+					<td class="text-mrp-cinza">
+						{{average?.average_price | currency : 'USD':'symbol-narrow':'1.2-2'}}
+					</td>
+					<td class="text-mrp-cinza">
+						<span [ngClass]="average?.devaluation_percentage > 0 ? 'text-mrp-verde' : 'text-vermelho-escuro' ">
+							{{average?.devaluation_percentage}} %
+						</span>
+						= {{average?.devaluation | currency : 'USD':'symbol-narrow':'1.2-2'}}
+					</td>
+					<td class="text-mrp-cinza">
+						{{average?.free | currency : 'USD':'symbol-narrow':'1.2-2'}}
+					</td>
+				</tr>
+			</ng-container>
+		</tbody>
+	</table>
+</div>
+<loading [loading]=loading></loading>
